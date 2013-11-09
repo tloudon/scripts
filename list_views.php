@@ -27,18 +27,11 @@ foreach ($views as $view) {
     $csv[$i][0] = $line;
     $i++;
     continue;
-  } 
+  }
   $line = "VIEW: $view_id";
 
 
   $view->init_display();   // follow Views internal practices, does some checks on default display
-
-  // necessary??
-  if (0 == count($view->display)) {
-    $csv[$i][0] = $line . "ZERO DISPLAYS";
-    $i++;
-    continue;
-  } 
 
   // loop through each Display to grab the name and cache
   foreach ($view->display as $display) {
